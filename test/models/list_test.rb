@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Manipulate_List < ActiveSupport::TestCase
 
-        test "add an item to a file" do
+        test "add an item to the list" do
 
             item = "top"
             list = List.new
@@ -15,8 +15,12 @@ class Manipulate_List < ActiveSupport::TestCase
         end
 
 
-        test "delete an item from a file" do
-            skip
+        test "delete an item from the list" do
+            list = List.new
+
+            item = "thing"
+
+            refute_includes(list.delete, item)
         end
 
 end
